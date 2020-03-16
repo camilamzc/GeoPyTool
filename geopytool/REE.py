@@ -19,7 +19,7 @@ class REE(AppForm):
     BinHREE=['Gd', 'Tb', 'Dy', 'Ho', 'Er', 'Tm', 'Yb', 'Lu']
 
     StandardsName = ['C1 Chondrite Sun and McDonough,1989', 'Chondrite Taylor and McLennan,1985',
-                     'Chondrite Haskin et al.,1966', 'Chondrite Nakamura,1977', 'MORB Sun and McDonough,1989','UCC_Rudnick & Gao2003']
+                     'Chondrite Haskin et al.,1966', 'Chondrite Nakamura,1977', 'N-type MORB Sun and McDonough,1989','UCC_Rudnick & Gao2003']
 
     # RefName=['Sun, S. S., and Mcdonough, W. F., 1989, Chemical and isotopic systematics of oceanic basalts: implications for mantle composition and processes: Geological Society London Special Publications, v. 42, no. 1, p. 313-345.',]
 
@@ -34,11 +34,11 @@ class REE(AppForm):
         'Chondrite Haskin et al.,1966': {'La': 0.32, 'Ce': 0.787, 'Pr': 0.112, 'Nd': 0.58, 'Sm': 0.185, 'Eu': 0.071,
                                          'Gd': 0.256, 'Tb': 0.05, 'Dy': 0.343, 'Ho': 0.07, 'Er': 0.225, 'Tm': 0.03,
                                          'Yb': 0.186, 'Lu': 0.034},
-        'Chondrite Nakamura,1977': {'La': 0.33, 'Ce': 0.865, 'Pr': 0.112, 'Nd': 0.63, 'Sm': 0.203, 'Eu': 0.077,
-                                    'Gd': 0.276, 'Tb': 0.047, 'Dy': 0.343, 'Ho': 0.07, 'Er': 0.225, 'Tm': 0.03,
-                                    'Yb': 0.22,
-                                    'Lu': 0.034},
-        'MORB Sun and McDonough,1989': {'La': 2.5, 'Ce': 7.5, 'Pr': 1.32, 'Nd': 7.3, 'Sm': 2.63, 'Eu': 1.02, 'Gd': 3.68,
+        'Primitive Mantle Sun and McDonough,1989': {'La': 0.687, 'Ce': 1.775, 'Pr': 0.276, 'Nd': 1.354, 'Sm': 0.444, 'Eu': 0.168,
+                                    'Gd':0.596, 'Tb': 0.108, 'Dy': 0.737, 'Ho': 0.164, 'Er': 0.48, 'Tm': 0.074,
+                                    'Yb': 0.493,
+                                    'Lu': 0.074},
+        'N-type MORB Sun and McDonough,1989': {'La': 2.5, 'Ce': 7.5, 'Pr': 1.32, 'Nd': 7.3, 'Sm': 2.63, 'Eu': 1.02, 'Gd': 3.68,
                                         'Tb': 0.67, 'Dy': 4.55, 'Ho': 1.052, 'Er': 2.97, 'Tm': 0.46, 'Yb': 3.05,
                                         'Lu': 0.46},
         'UCC_Rudnick & Gao2003':{'K':23244.13776,'Ti':3835.794545,'P':654.6310022,'Li':24,'Be':2.1,'B':17,'N':83,'F':557,'S':62,'Cl':370,'Sc':14,'V':97,'Cr':92,
@@ -386,7 +386,7 @@ class REE(AppForm):
             '''
             for i in self.data_to_norm.columns.values.tolist():
                 if i not in self.Element:
-                    self.data_to_norm = self.data_to_norm.drop(i, 1)            
+                    self.data_to_norm = self.data_to_norm.drop(i, 1)
             '''
 
             Y_bottom=0
